@@ -1,0 +1,639 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables de colores */
+:root {
+    --azul-celeste: #00CED1;
+    --verde-esmeralda: #50C878;
+    --negro: #0a0a0a;
+    --blanco: #ffffff;
+    --gris-oscuro: #1a1a1a;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(0, 206, 209, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(80, 200, 120, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(100, 100, 255, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(0, 206, 209, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, rgba(80, 200, 120, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, #0a0a0a 0%, #1a1a2e 25%, #0f3460 50%, #1a1a2e 75%, #0a0a0a 100%);
+    background-size: 400% 400%;
+    animation: galaxyMove 20s ease infinite;
+    color: var(--blanco);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Header y navegación */
+header {
+    background: linear-gradient(135deg, var(--gris-oscuro) 0%, var(--negro) 100%);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--azul-celeste);
+    box-shadow: 0 4px 15px rgba(0, 206, 209, 0.3);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav h1 {
+    color: var(--azul-celeste);
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--verde-esmeralda);
+    text-shadow: 0 0 8px rgba(80, 200, 120, 0.6);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--verde-esmeralda);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+/* Secciones */
+section {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 2px solid var(--azul-celeste);
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.2);
+}
+
+section h2 {
+    color: var(--azul-celeste);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.4);
+}
+
+section p {
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+/* Hero section (página inicio(?)) */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 206, 209, 0.1) 0%, rgba(80, 200, 120, 0.1) 100%);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Proyectos */
+.proyecto {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--verde-esmeralda);
+    transition: all 0.3s ease;
+}
+
+.proyecto:hover {
+    transform: translateX(10px);
+    box-shadow: 0 0 15px rgba(80, 200, 120, 0.3);
+}
+
+.proyecto h3 {
+    color: var(--verde-esmeralda);
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: var(--gris-oscuro);
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--verde-esmeralda);
+    box-shadow: 0 -4px 15px rgba(80, 200, 120, 0.3);
+}
+
+footer p {
+    color: var(--azul-celeste);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ANIMACIONES */
+
+/* Animación del fondo galaxia */
+@keyframes galaxyMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Capa 1: Estrellas grandes */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 10% 20%, white, transparent),
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 30% 10%, white, transparent),
+        radial-gradient(2px 2px at 40% 50%, white, transparent),
+        radial-gradient(2px 2px at 50% 25%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(2px 2px at 70% 40%, white, transparent),
+        radial-gradient(2px 2px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(2px 2px at 15% 80%, white, transparent),
+        radial-gradient(2px 2px at 25% 65%, white, transparent),
+        radial-gradient(2px 2px at 35% 90%, white, transparent),
+        radial-gradient(2px 2px at 45% 75%, white, transparent),
+        radial-gradient(2px 2px at 55% 85%, white, transparent),
+        radial-gradient(2px 2px at 65% 15%, white, transparent),
+        radial-gradient(2px 2px at 75% 95%, white, transparent),
+        radial-gradient(2px 2px at 85% 45%, white, transparent),
+        radial-gradient(2px 2px at 95% 80%, white, transparent),
+        radial-gradient(2px 2px at 5% 50%, white, transparent),
+        radial-gradient(2px 2px at 12% 40%, white, transparent);
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+    animation: twinkleSlow 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Capa 2: Estrellas medianas */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1.5px 1.5px at 8% 15%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 18% 25%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 28% 35%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 38% 45%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 48% 55%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 58% 65%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 68% 75%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 78% 85%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 88% 95%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 22% 60%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 32% 70%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 42% 80%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 52% 5%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 62% 22%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 72% 38%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 82% 52%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 92% 68%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 14% 88%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 44% 12%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1.5px 1.5px at 74% 28%, rgba(255, 255, 255, 0.9), transparent);
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+    animation: twinkleSlow 8s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Capa 3: Estrellas pequeñas */
+main::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 5% 10%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 15% 20%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 25% 8%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 35% 18%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 45% 28%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 55% 38%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 65% 48%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 75% 58%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 85% 68%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 95% 78%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 7% 88%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 17% 98%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 27% 14%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 37% 24%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 47% 34%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 57% 44%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 67% 54%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 77% 64%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 87% 74%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 97% 84%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 11% 32%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 21% 42%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 31% 52%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 41% 62%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 51% 72%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 61% 82%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 71% 92%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 81% 6%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 91% 16%, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 3% 26%, rgba(255, 255, 255, 0.7), transparent);
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+    animation: twinkleSlow 10s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Contenido sobre las estrellas */
+header, main, footer {
+    position: relative;
+    z-index: 10;
+}
+
+/* Contenedor de imágenes debajo del hero (Miku-Kaito) */
+.imagenes-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.imagenes-hero img {
+    max-width: 30%;
+    height: auto;
+}
+
+/* Efecto espejo para Kaito */
+.imagen-kaito {
+    transform: scaleX(-1);
+}
+
+/* Responsive para imágenes */
+@media (max-width: 768px) {
+    .imagenes-hero {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .imagenes-hero img {
+        max-width: 60%;
+    }
+}
+
+/* Estrellas decorativas en la sección sobre-mi */
+#sobre-mi {
+    position: relative;
+}
+
+.estrella {
+    position: absolute;
+    color: var(--azul-celeste);
+    font-size: 1.5rem;
+    pointer-events: none;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.6);
+    animation: twinkleStar 3s ease-in-out infinite;
+    z-index: 5;
+}
+
+/* Animación de parpadeo para las estrellas */
+@keyframes twinkleStar {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Posiciones aleatorias - Borde superior */
+.estrella-1 {
+    top: -15px;
+    left: 10%;
+    font-size: 2rem;
+    color: var(--verde-esmeralda);
+}
+
+.estrella-2 {
+    top: -10px;
+    left: 30%;
+    font-size: 1.2rem;
+}
+
+.estrella-3 {
+    top: -18px;
+    right: 25%;
+    font-size: 1.8rem;
+    color: var(--verde-esmeralda);
+}
+
+/* Posiciones aleatorias - Borde izquierdo */
+.estrella-4 {
+    top: 20%;
+    left: -15px;
+    font-size: 1.5rem;
+}
+
+.estrella-5 {
+    top: 50%;
+    left: -10px;
+    font-size: 1rem;
+    color: var(--verde-esmeralda);
+}
+
+.estrella-6 {
+    top: 75%;
+    left: -12px;
+    font-size: 1.7rem;
+}
+
+/* Posiciones aleatorias - Borde derecho */
+.estrella-7 {
+    top: 15%;
+    right: -18px;
+    font-size: 2.2rem;
+    color: var(--verde-esmeralda);
+}
+
+.estrella-8 {
+    top: 45%;
+    right: -8px;
+    font-size: 1.3rem;
+}
+
+.estrella-9 {
+    top: 70%;
+    right: -14px;
+    font-size: 1.6rem;
+    color: var(--verde-esmeralda);
+}
+
+/* Posiciones aleatorias - Borde inferior */
+.estrella-10 {
+    bottom: -12px;
+    left: 20%;
+    font-size: 1.4rem;
+}
+
+.estrella-11 {
+    bottom: -16px;
+    left: 60%;
+    font-size: 1.9rem;
+    color: var(--verde-esmeralda);
+}
+
+.estrella-12 {
+    bottom: -10px;
+    right: 15%;
+    font-size: 1.1rem;
+}
+
+/* Imágenes dentro de proyectos */
+
+/* Proyecto 1 */
+.proyecto {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.imagen-fsa {
+    max-width: 300px;
+    min-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--verde-esmeralda);
+    box-shadow: 0 0 10px rgba(80, 200, 120, 0.3);
+}
+
+.proyecto-texto {
+    flex: 1;
+}
+
+/* Proyecto 2 */
+.proyecto {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.make-up {
+    max-width: 300px;
+    min-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--verde-esmeralda);
+    box-shadow: 0 0 10px rgba(80, 200, 120, 0.3);
+    order: 2;
+}
+
+.proyecto-texto {
+    order: 1;
+}
+
+/* Proyecto 3 */
+.proyecto {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.imagen-draw {
+    max-width: 300px;
+    min-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--verde-esmeralda);
+    box-shadow: 0 0 10px rgba(80, 200, 120, 0.3);
+}
+
+.proyecto-texto {
+    flex: 1;
+}
+
+/* El main debe ser el contenedor de las imágenes flotantes */
+main {
+    position: relative;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+/* Contenedor para las imágenes flotantes - TODO el espacio del main */
+.floating-images {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px - 60px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* El contenido de contacto debe estar por encima */
+#contacto {
+    position: relative;
+    z-index: 10;
+}
+
+/* Estilos para cada imagen */
+.floating-img {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    opacity: 0.8;
+    animation: float 20s infinite ease-in-out;
+    background: transparent;
+}
+
+/* Posiciones debajo del recuadro */
+/* Posiciones SOLO ABAJO del recuadro - MÁS SEPARADAS */
+.floating-img:nth-child(1) {
+    bottom: 25%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 15s;
+}
+
+.floating-img:nth-child(2) {
+    bottom: 35%;
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 18s;
+}
+
+.floating-img:nth-child(3) {
+    bottom: 15%;
+    left: 50%;
+    animation-delay: 4s;
+    animation-duration: 20s;
+}
+
+.floating-img:nth-child(4) {
+    bottom: 40%;
+    right: 10%;
+    animation-delay: 6s;
+    animation-duration: 16s;
+}
+
+.floating-img:nth-child(5) {
+    bottom: 8%;
+    left: 20%;
+    animation-delay: 8s;
+    animation-duration: 22s;
+}
+
+.floating-img:nth-child(6) {
+    bottom: 20%;
+    right: 20%;
+    animation-delay: 10s;
+    animation-duration: 19s;
+}
+
+.floating-img:nth-child(7) {
+    bottom: 45%;
+    left: 40%;
+    animation-delay: 3s;
+    animation-duration: 17s;
+}
+
+.floating-img:nth-child(8) {
+    bottom: 10%;
+    right: 35%;
+    animation-delay: 5s;
+    animation-duration: 21s;
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(20px, -20px) rotate(5deg);
+    }
+    50% {
+        transform: translate(-15px, 15px) rotate(-5deg);
+    }
+    75% {
+        transform: translate(15px, 20px) rotate(3deg);
+    }
+}
+
+
+
