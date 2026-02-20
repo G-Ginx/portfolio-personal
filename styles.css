@@ -635,5 +635,126 @@ main {
     }
 }
 
+/* Grid de tarjetas de proyectos */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.proyecto-card {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--verde-esmeralda);
+    border-radius: 12px;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.proyecto-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--azul-celeste);
+}
+
+.proyecto-card h3 {
+    color: var(--verde-esmeralda);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(80, 200, 120, 0.4);
+    border-color: var(--azul-celeste);
+}
+
+@media (max-width: 768px) {
+    .proyectos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Botón volver */
+.btn-volver {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--azul-celeste);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    color: var(--verde-esmeralda);
+    text-shadow: 0 0 8px rgba(80, 200, 120, 0.6);
+}
+
+/* Páginas de detalle de proyecto */
+.proyecto-detalle h2 {
+    margin-bottom: 2rem;
+}
+
+.bloque-contenido {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.bloque-contenido.invertido {
+    flex-direction: row !important;
+}
+
+.bloque-contenido.invertido .bloque-imagen {
+    order: -1;
+}
+
+.bloque-texto {
+    flex: 1;
+}
+
+.bloque-texto p {
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+    line-height: 1.8;
+}
+
+.bloque-imagen {
+    flex: 0 0 300px;
+}
+
+.bloque-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--azul-celeste);
+    box-shadow: 0 0 15px rgba(0, 206, 209, 0.3);
+}
+
+@media (max-width: 768px) {
+    .bloque-contenido,
+    .bloque-contenido.invertido {
+        flex-direction: column;
+    }
+
+    .bloque-imagen {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+
 
 
