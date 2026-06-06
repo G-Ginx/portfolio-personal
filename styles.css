@@ -76,6 +76,11 @@ nav ul li a:hover {
     text-shadow: 0 0 8px rgba(80, 200, 120, 0.6);
 }
 
+nav ul li a.activo {
+    color: var(--verde-esmeralda) !important;
+    text-shadow: 0 0 8px rgba(80, 200, 120, 0.6) !important;
+}
+
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -562,7 +567,6 @@ main {
 }
 
 /* Posiciones debajo del recuadro */
-/* Posiciones SOLO ABAJO del recuadro - MÁS SEPARADAS */
 .floating-img:nth-child(1) {
     bottom: 25%;
     left: 10%;
@@ -603,20 +607,6 @@ main {
     right: 20%;
     animation-delay: 10s;
     animation-duration: 19s;
-}
-
-.floating-img:nth-child(7) {
-    bottom: 45%;
-    left: 40%;
-    animation-delay: 3s;
-    animation-duration: 17s;
-}
-
-.floating-img:nth-child(8) {
-    bottom: 10%;
-    right: 35%;
-    animation-delay: 5s;
-    animation-duration: 21s;
 }
 
 /* Animación de flotación */
